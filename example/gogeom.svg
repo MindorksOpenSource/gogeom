@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="102" viewBox="0 0 490 102">
+  <g fill="none" fill-rule="evenodd" transform="translate(-3 -58)">
+    <text font-family="ProductSans-Regular, Product Sans" font-size="128">
+      <tspan x="0" y="123" fill="#2C3E50">go</tspan> <tspan x="144.768" y="123" fill="#4CA1AF">geom</tspan>
+    </text>
+    <rect width="264" height="6" x="229" y="154" fill="#2C3E50" rx="3"/>
+  </g>
+</svg>
