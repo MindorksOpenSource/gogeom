@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/MindorksOpenSource/gogeomm/blob/master/example/gogeom.svg"></p>
+<p align="center"><img src="https://github.com/MindorksOpenSource/gogeom/blob/master/example/gogeom.svg"></p>
 
 # Gogeom - A Geometrical library for the Go programming language.
 <!-- #### Refer [Wiki](https://github.com/MindorksOpenSource/gogeom/wiki/Circle) for detailed documentation -->
