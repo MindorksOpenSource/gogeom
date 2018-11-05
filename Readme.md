@@ -1,7 +1,7 @@
-<p align="center"><img src="https://github.com/MindorksOpenSource/gogeom/blob/master/example/gogeom.svg"></p>
+<p align="center"><img src="https://github.com/MindorksOpenSource/gogeomm/blob/master/example/gogeomm.svg"></p>
 
-# Gogeo - A Geometrical library for the Go programming language.
-<!-- #### Refer [Wiki](https://github.com/MindorksOpenSource/gogeo/wiki/Circle) for detailed documentation -->
+# Gogeom - A Geometrical library for the Go programming language.
+<!-- #### Refer [Wiki](https://github.com/MindorksOpenSource/gogeom/wiki/Circle) for detailed documentation -->
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects) [![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ```
@@ -12,19 +12,19 @@ Which includes multiple Geometrical calculations like Circle, Lines etc in diffe
 
 Installation is done using `go get`.
 ```
-go get -u github.com/MindorksOpenSource/gogeo
+go get -u github.com/MindorksOpenSource/gogeom
 ```
 
 
 
-#### These are following shape calculation which is supported by Gogeo.
+#### These are following shape calculation which is supported by gogeom.
 - [x] Circle
 - [x] Line
 - [x] Ellipse
 - [ ] more to come..
 
 # Circle
-Gogeo can handle two form of Circle.
+gogeom can handle two form of Circle.
 - **Radius Form** 
   ``` 
   (x-a)^2 + (y-b)^2 = r^2 
@@ -40,10 +40,10 @@ Gogeo can handle two form of Circle.
 #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeo"`
+- import `geometry "github.com/MindorksOpenSource/gogeom"`
 - Initalize two circles as (in Radius Form),
 ```
-import geometry "github.com/MindorksOpenSource/gogeo"
+import geometry "github.com/MindorksOpenSource/gogeom"
 
 func main() {
     // (x-a)^2 + (y-b)^2 = r^2 and (x-c)^2 + (y-d)^2 = s^2  are circle equation
@@ -56,7 +56,7 @@ r := geometry.RadiusFormCircle{
 ```
 -  Initalize two circles as (in General Form),
 ```
-import `geometry "github.com/MindorksOpenSource/gogeo"
+import `geometry "github.com/MindorksOpenSource/gogeom"
 
 func main() {
 // x2 + y2 + Ax + By+ C = 0 and  x2 + y2 + Dx + Ey + F = 0 are circle equation
@@ -91,7 +91,7 @@ g := geometry.GeneralFormOfCircle{
 |Radius of Both Circls **R1,R2**||g.RadiusOfTwoCircle()|
 
 # Line
-Gogeo can handle two form of Line.
+gogeom can handle two form of Line.
 - **General Form** 
   ``` 
   Ax+By+C =0
@@ -104,7 +104,7 @@ Gogeo can handle two form of Line.
   #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeo"`
+- import `geometry "github.com/MindorksOpenSource/gogeom"`
 - Initalize two lines as (in **General** Form),
 ```
 // initialise one line 
@@ -155,7 +155,7 @@ x^2/a^2 + y^2/b^2 = 1,
  #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeo"`
+- import `geometry "github.com/MindorksOpenSource/gogeom"`
 - Initalize ellipse,
 ```
 e := geometry.Ellipse {
