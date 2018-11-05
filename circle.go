@@ -1,4 +1,4 @@
-package gogeo
+package gogeom
 
 import (
 	"fmt"
