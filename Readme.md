@@ -18,10 +18,10 @@ go get -u github.com/MindorksOpenSource/gogeom
 
 
 #### These are following shape calculation which is supported by gogeom.
-- [x] Circle
-- [x] Line
-- [x] Ellipse
-- [x] Parabola
+- [x]  **Circle**
+- [x]  **Line**
+- [x]  **Ellipse**
+- [x]  **Parabola**
 - [ ] more to come..
 
 # Circle
