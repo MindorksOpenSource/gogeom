@@ -16,8 +16,8 @@ func main() {
 	circle := geometry.RadiusFormOfCircle{
 		2, 3, 4, 5, 6, 7,
 	}
-	parabola := geometry.Parabola{
-		2, false,
+	parabola := geometry.ParabolaWithOrigin{
+		2, 2, 3, false,
 	}
 	fmt.Println(ellipse.GetEccentricity())
 	fmt.Println(line.SlopeOfLine())

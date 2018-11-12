@@ -8,7 +8,7 @@ type Parabola struct {
 
 //(y - k)^2 = 4*a*(x - h)
 type ParabolaWithOrigin struct {
-	P       *Parabola
+	A       float64
 	H       float64
 	K       float64
 	IsYAxis bool
@@ -21,7 +21,7 @@ func (p *Parabola) LenghtOfLatusRation() float64 {
 
 //Length of latus ration for shifted origin
 func (p *ParabolaWithOrigin) LenghtOfLatusRation() float64 {
-	return (p.P.A * 4)
+	return (p.A * 4)
 }
 
 // find the focus of a parabola
@@ -36,9 +36,9 @@ func (p *Parabola) FocusOfParabola() (float64, float64) {
 // focus of shifted origin parabola
 func (p *ParabolaWithOrigin) FocusOfParabola() (float64, float64) {
 	if p.IsYAxis == false {
-		return (p.H + p.P.A), p.K
+		return (p.H + p.A), p.K
 	} else {
-		return (p.H), (p.K + p.P.A)
+		return (p.H), (p.K + p.A)
 	}
 }
 
@@ -63,18 +63,18 @@ func (p *Parabola) AxisEquation() string {
 //axis of normal ParabolaWithOrigin
 func (p *ParabolaWithOrigin) AxisEquation() string {
 	if p.IsYAxis == true {
-		return ("x = " + FloatToString(p.H-p.P.A))
+		return ("x = " + FloatToString(p.H-p.A))
 	} else {
-		return ("y = " + FloatToString(p.K-p.P.A))
+		return ("y = " + FloatToString(p.K-p.A))
 	}
 }
 
 //Equation of directix ParabolaWithOrigin
 func (p *ParabolaWithOrigin) DirectrixEquation() string {
 	if p.IsYAxis == true {
-		return ("y = " + FloatToString(p.K-(p.P.A)))
+		return ("y = " + FloatToString(p.K-(p.A)))
 	} else {
-		return ("x = " + FloatToString(p.H-(p.P.A)))
+		return ("x = " + FloatToString(p.H-(p.A)))
 	}
 }
 
