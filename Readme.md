@@ -204,8 +204,8 @@ p :=shape.Parabola {
 }
 ```
 #### Step to follow :
-| Working          | Parabola With Origin | Parabola |Output
-| :-------------           |:-------------              | :-----   | :-----:   
+| Working          | Parabola With Origin | Parabola |Result
+| :-------------           |:-------------              | :-----   | :-----   
 |Lenght Of Latus Ration|p.LenghtOfLatusRation()|p.LenghtOfLatusRation()|float64| 
 |Focus|p.FocusOfParabola()|p.FocusOfParabola()|float64,float64|
 |Directrix Equation|p.DirectrixEquation()|p.DirectrixEquation()|string|
