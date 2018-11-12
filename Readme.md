@@ -191,14 +191,12 @@ Gogeom can support two form
   - Initalize Parabola,
 ```
 p := shape.Parabola {
-        // a, b
         1,
         true // where this boolean value indicates if the parabola is on Y-Axis or not.
 }
 ---- or ----
 
 p :=shape.Parabola {
-        // a, b
         1,
         true // where this boolean value indicates if the parabola is on Y-Axis or not.
 }
