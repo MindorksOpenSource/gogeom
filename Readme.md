@@ -165,7 +165,7 @@ e := shape.Ellipse {
 }
 ```
 | Working                                   | General Form (Single Line) | Result
-| :-------------                         |:-------------                         | :-----         
+| :-------------                |:-------------    | :-----         
 |Eccentricity of Ellipse|e.GetEccentricity()|float64|
 |Shape Of Locus|e.GetShapeOfLocus()| Circle/Ellipse/Parabola/Hyerbola|
 |Slope Of Tangent Line at **x1,y1**|e.GetSlopeOfTangentLine(x1,y1)| float64|
@@ -190,22 +190,35 @@ Gogeom can support two form
   - import `shape "github.com/MindorksOpenSource/gogeom"`
   - Initalize Parabola,
 ```
-e := shape.Parabola {
+p := shape.Parabola {
         // a, b
         1,
         true // where this boolean value indicates if the parabola is on Y-Axis or not.
 }
 ---- or ----
 
-e :=shape.Parabola {
+p :=shape.Parabola {
         // a, b
         1,
         true // where this boolean value indicates if the parabola is on Y-Axis or not.
 }
 ```
 #### Step to follow :
-| Working                                   | General Form (Single Line) | Result |
-| :-------------                         |:-------------                         | :-----    
+| Working          | Parabola With Origin | Parabola |Output
+| :-------------           |:-------------              | :-----   | :-----:   
+|Lenght Of Latus Ration|p.LenghtOfLatusRation()|p.LenghtOfLatusRation()|float64| 
+|Focus|p.FocusOfParabola()|p.FocusOfParabola()|float64,float64|
+|Directrix Equation|p.DirectrixEquation()|p.DirectrixEquation()|string|
+|Axis Equation|p.AxisEquation()|p.AxisEquation()|string|
+|Vertex|p.Vertex()||string|
+|Position Of Point||p.PositionOfPoint()|string|
+|Point Of Interesction||p.PointOfInteresction()|string|
+|Tangent Equation||p.TangentEquation()|string|
+|Normal Equation||p.NormalEquation()|string|
+|Chord Of Contact Equation||p.ChordOfContactEquation()|string|
+|Polar Of Point||p.PolarOfPoint()|string|
+|Pole Of line||p.PoleOfline()|float64, float64|
+
 
 ### TODO
 * More features related to Geometrical Functions

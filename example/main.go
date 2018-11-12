@@ -25,5 +25,5 @@ func main() {
 	fmt.Println(line.YIntercept())
 	fmt.Println(circle.AreaOfCircles())
 	fmt.Println(parabola.AxisEquation())
-
+	fmt.Println(parabola.DirectrixEquation())
 }
