@@ -211,13 +211,13 @@ p :=shape.Parabola {
 |Directrix Equation|p.DirectrixEquation()|p.DirectrixEquation()|string|
 |Axis Equation|p.AxisEquation()|p.AxisEquation()|string|
 |Vertex|p.Vertex()||string|
-|Position Of Point||p.PositionOfPoint()|string|
-|Point Of Interesction||p.PointOfInteresction()|string|
-|Tangent Equation||p.TangentEquation()|string|
-|Normal Equation||p.NormalEquation()|string|
-|Chord Of Contact Equation||p.ChordOfContactEquation()|string|
-|Polar Of Point||p.PolarOfPoint()|string|
-|Pole Of line||p.PoleOfline()|float64, float64|
+|Position Of Point - **x,y**||p.PositionOfPoint(x,y)|string|
+|Point Of Interesction - **y = mx + c**||p.PointOfInteresction(m,c)|string|
+|Tangent Equation - **x,y**||p.TangentEquation(x,y)|string|
+|Normal Equation - **x,y**||p.NormalEquation(x,y)|string|
+|Chord Of Contact Equation - **x,y**||p.ChordOfContactEquation(x,y)|string|
+|Polar Of Point - **x,y**||p.PolarOfPoint(x,y)|string|
+|Pole Of line - **lx + my + x = 0** ||p.PoleOfline(l,m)|float64, float64|
 
 
 ### TODO
