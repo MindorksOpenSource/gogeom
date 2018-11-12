@@ -175,7 +175,7 @@ e := shape.Ellipse {
 # Parabola 
 Gogeom can support two form 
 - **Equation of Parabola** 
-  ``` 
+``` 
   y^2 = 4ax
   or 
   x^2 = 4ay
@@ -186,7 +186,7 @@ Gogeom can support two form
   (x - h)^2 = 4a(y - k)
   where, (h,k) are vertex
 
-  ```
+```
   - import `shape "github.com/MindorksOpenSource/gogeom"`
   - Initalize Parabola,
 ```
