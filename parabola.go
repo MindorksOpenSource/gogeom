@@ -25,6 +25,13 @@ func (p *Parabola) FocusOfParabola() (float64, float64) {
 		return 0, p.A
 	}
 }
+func (p *ParabolaWithOrigin) FocusOfParabola() (float64, float64) {
+	if p.IsYAxis == false {
+		return (p.H + p.P.A), p.K
+	} else {
+		return (p.H), (p.K + p.P.A)
+	}
+}
 
 func (p *Parabola) DirectrixEquation() string {
 	if p.IsYAxis == true {
@@ -33,14 +40,28 @@ func (p *Parabola) DirectrixEquation() string {
 		return ("x = " + FloatToString(-(p.A)))
 	}
 }
-func (p *ParabolaWithOrigin) Vertex() (float64, float64) {
-	return p.H, p.K
+func (p *Parabola) AxisEquation() string {
+	if p.IsYAxis == true {
+		return ("x = 0")
+	} else {
+		return ("y = 0")
+	}
+}
+func (p *ParabolaWithOrigin) AxisEquation() string {
+	if p.IsYAxis == true {
+		return ("x = " + FloatToString(p.H-p.P.A))
+	} else {
+		return ("y = " + FloatToString(p.K-p.P.A))
+	}
 }
 
-func (p *ParabolaWithOrigin) FocusOfParabola() (float64, float64) {
-	if p.IsYAxis == false {
-		return (p.H + p.P.A), p.K
+func (p *ParabolaWithOrigin) DirectrixEquation() string {
+	if p.IsYAxis == true {
+		return ("y = " + FloatToString(p.K-(p.P.A)))
 	} else {
-		return (p.H), (p.K + p.P.A)
+		return ("x = " + FloatToString(p.H-(p.P.A)))
 	}
+}
+func (p *ParabolaWithOrigin) Vertex() (float64, float64) {
+	return p.H, p.K
 }
