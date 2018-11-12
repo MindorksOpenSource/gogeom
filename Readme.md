@@ -21,6 +21,7 @@ go get -u github.com/MindorksOpenSource/gogeom
 - [x] Circle
 - [x] Line
 - [x] Ellipse
+- [x] Parabola
 - [ ] more to come..
 
 # Circle
@@ -40,7 +41,7 @@ gogeom can handle two form of Circle.
 #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeom"`
+- import `shape "github.com/MindorksOpenSource/gogeom"`
 - Initalize two circles as (in Radius Form),
 ```
 import geometry "github.com/MindorksOpenSource/gogeom"
@@ -48,7 +49,7 @@ import geometry "github.com/MindorksOpenSource/gogeom"
 func main() {
     // (x-a)^2 + (y-b)^2 = r^2 and (x-c)^2 + (y-d)^2 = s^2  are circle equation
     // r, s are radius of two circles
-r := geometry.RadiusFormCircle{
+r := shape.RadiusFormCircle{
         // a, b , r , c, d, s
         2, 3, 4, 5, 6, 7,
 	}
@@ -56,11 +57,11 @@ r := geometry.RadiusFormCircle{
 ```
 -  Initalize two circles as (in General Form),
 ```
-import `geometry "github.com/MindorksOpenSource/gogeom"
+import `shape "github.com/MindorksOpenSource/gogeom"
 
 func main() {
 // x2 + y2 + Ax + By+ C = 0 and  x2 + y2 + Dx + Ey + F = 0 are circle equation
-g := geometry.GeneralFormOfCircle{
+g := shape.GeneralFormOfCircle{
         // a, b , r , c, d, s
         2, 3, 4, 5, 6, 7,
 	}
@@ -104,24 +105,24 @@ gogeom can handle two form of Line.
   #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeom"`
+- import `shape "github.com/MindorksOpenSource/gogeom"`
 - Initalize two lines as (in **General** Form),
 ```
 // initialise one line 
-l := geometry.GeneralLine{
+l := shape.GeneralLine{
         // a, b, c
         2, 3, 4,
 	}
 }
 
 ---- or if you have to initialise multiple line ----
-l := geometry.GeneralLines{
+l := shape.GeneralLines{
         // a, b, c, d, e, f
         2, 3, 4, 5, 6, 7,
 	}
 }
 ---- or if you have two point line ----
-l := geometry.GeneralLines{
+l := shape.GeneralLines{
         // a, b, c, d, e, f
         2, 3, 4, 5, 
 	}
@@ -155,10 +156,10 @@ x^2/a^2 + y^2/b^2 = 1,
  #### Step to follow :
 
 
-- import `geometry "github.com/MindorksOpenSource/gogeom"`
+- import `shape "github.com/MindorksOpenSource/gogeom"`
 - Initalize ellipse,
 ```
-e := geometry.Ellipse {
+e := shape.Ellipse {
         // a, b
         1,2
 }
@@ -170,6 +171,41 @@ e := geometry.Ellipse {
 |Slope Of Tangent Line at **x1,y1**|e.GetSlopeOfTangentLine(x1,y1)| float64|
 |Tangent Line Equation at **x1,y1**|e.GetTangentLineEquation(x1,y1)| string|
 |Ramanujan Approx Circumference of ellipse|e.RamanujanApproxCircumference()| float64|
+
+# Parabola 
+Gogeom can support two form 
+- **Equation of Parabola** 
+  ``` 
+  y^2 = 4ax
+  or 
+  x^2 = 4ay
+  or 
+  (y - k)^2 = 4a(x - h)
+  where, (h,k) are vertex
+  or
+  (x - h)^2 = 4a(y - k)
+  where, (h,k) are vertex
+
+  ```
+  - import `shape "github.com/MindorksOpenSource/gogeom"`
+  - Initalize Parabola,
+```
+e := shape.Parabola {
+        // a, b
+        1,
+        true // where this boolean value indicates if the parabola is on Y-Axis or not.
+}
+---- or ----
+
+e :=shape.Parabola {
+        // a, b
+        1,
+        true // where this boolean value indicates if the parabola is on Y-Axis or not.
+}
+```
+#### Step to follow :
+| Working                                   | General Form (Single Line) | Result |
+| :-------------                         |:-------------                         | :-----    
 
 ### TODO
 * More features related to Geometrical Functions
