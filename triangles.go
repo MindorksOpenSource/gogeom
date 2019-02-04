@@ -1,24 +1,4 @@
-//for triangle
-/*
-right->
-sides(Base,Height,hypotenus)
-Perimeter,Area,altitudeof(base),altitudeof(height),altitudeof(hyprothenus)
-
-isosceles->
-sides(base,slants)
-Perimeter,Area,altitudeof(base),altitudeof(slants)
-
-equilateral->
-side(a)
-Perimeter,Area,altitude,median,angle bisector,
-
-scalene(other random triangles)->
-sides(a,b)
-Perimeter,Area
-*/
-
-//package gogeom
-package main
+package gogeom
 
 import (
 	"fmt"
@@ -33,6 +13,15 @@ type RightTriangleSides struct {
 //sides of the isosceles triangle
 type IsoscelesTriangleSides struct {
 	base, slants float64
+}
+
+//sides of the equilateral triangle
+type EquilateralTriangleSides struct {
+	side float64
+}
+
+type ScaleneTriangleSides struct {
+	side_a, side_b, side_c float64
 }
 
 //perimeter of the right angled triangle
@@ -75,10 +64,28 @@ func (t *IsoscelesTriangleSides) AreaOfIsoscelesTriangle() float64 {
 	return (0.5) * (t.base * t.AltitudeOfIsoscelesTriangle())
 }
 
-func main() {
-	inputSides := IsoscelesTriangleSides {
-		8.0, 5.0,
-	}
-	fmt.Println(inputSides.AltitudeOfIsoscelesTriangle())
-	fmt.Println(inputSides.AreaOfIsoscelesTriangle())
+//perimeter of equilateral triangle
+func (t *EquilateralTriangleSides) PerimeterOfEquilateralTriangle() float64 {
+	return 3 * t.side
+}
+
+//area of equilateral triangle
+func (t *EquilateralTriangleSides) AreaOfEquilateralTriangle() float64 {
+	return math.Sqrt(3) * (math.Pow(t.side,2) / 4)
+}
+
+//altitude/median/angle bisector/perpendicular bisector of equilateral triangle
+func (t *EquilateralTriangleSides) AltitudeOfEquilateralTriangle() float64 {
+	return math.Sqrt(3) * t.side / 2
+}
+
+//perimeter of scalene triangle
+func (t *ScaleneTriangleSides) PerimeterOfScaleneTriangle() float64 {
+	return t.side_a + t.side_b + t.side_c
+}
+
+//area of scalene triangle using heron's formula
+func (t *ScaleneTriangleSides) AreaOfScaleneTriangle() float64 {
+	p := t.PerimeterOfScaleneTriangle() / 2
+	return math.Sqrt(p * (p - t.side_a) * (p - t.side_b) * (p - t.side_c))
 }
