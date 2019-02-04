@@ -70,10 +70,15 @@ func (t *IsoscelesTriangleSides) AltitudeOfIsoscelesTriangle() float64 {
 	return math.Sqrt(math.Pow(t.slants, 2) - math.Pow(t.base/2, 2))
 }
 
+//area of isosceles triangle
+func (t *IsoscelesTriangleSides) AreaOfIsoscelesTriangle() float64 {
+	return (0.5) * (t.base * t.AltitudeOfIsoscelesTriangle())
+}
+
 func main() {
 	inputSides := IsoscelesTriangleSides {
 		8.0, 5.0,
 	}
-	fmt.Println(inputSides.PerimeterOfIsoscelesTriangle())
 	fmt.Println(inputSides.AltitudeOfIsoscelesTriangle())
+	fmt.Println(inputSides.AreaOfIsoscelesTriangle())
 }
