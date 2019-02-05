@@ -267,7 +267,7 @@ Gogeom can handle any polygon with given their *number of sides*, *length of sid
 
 
 #### Contributor
-[Himanshu Singh](https://github.com/hi-manshu)
+[Himanshu Singh](https://github.com/hi-manshu)\
 [Nishchal Raj](https://github.com/nishchalraj)
 
 
