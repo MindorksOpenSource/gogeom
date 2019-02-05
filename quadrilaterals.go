@@ -42,9 +42,14 @@ type SquareSides struct {
 	side float64
 }
 
-//diagonal of square
+//diagonals of square
 type SquareDiagonals struct {
 	diagonal float64
+}
+
+//sides of rectangle
+type RectangleSides struct {
+	length, breadth float64
 }
 
 //perimeter of square when the sides are there
@@ -77,11 +82,26 @@ func (q *SquareDiagonals) AreaOfSquareWithDiagonal() float64 {
 	return math.Pow(q.SideOfSquare(), 2)
 }
 
+//perimeter of rectangle
+func (q *RectangleSides) PerimeterOfRectangle() float64 {
+	return 2 * (q.length + q.breadth)
+}
+
+//area of rectangle
+func (q *RectangleSides) AreaOfRectangle() float64 {
+	return q.length * q.breadth
+}
+
+//diagonal of rectangle
+func (q *RectangleSides) DiagonalOfRectangle() float64 {
+	return math.Sqrt(math.Pow(q.length, 2) + math.Pow(q.breadth, 2))
+}
+
 func main() {
-	input := SquareDiagonals {
-		5.656854249492381,
+	input := RectangleSides {
+		3,4,
 	}
-	fmt.Println(input.SideOfSquare())
-	fmt.Println(input.PerimeterOfSquareWithDiagonal())
-	fmt.Println(input.AreaOfSquareWithDiagonal())
+	fmt.Println(input.PerimeterOfRectangle())
+	fmt.Println(input.AreaOfRectangle())
+	fmt.Println(input.DiagonalOfRectangle())
 }
