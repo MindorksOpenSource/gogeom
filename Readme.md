@@ -233,18 +233,18 @@ Gogeom supports the following types of triangle and their respective calculation
 - import `shape "github.com/MindorksOpenSource/gogeom"`
 
 ## Calculations for Triangles
-| Triangle | Input values | Working | Calculation | Result |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Right Triangle | base, height, hypotenuse | Perimeter | t.PerimeterOfRightTriangle() | float64 |
-||| Area | t.AreaOfRightTriangle() | float64 |
-||| Altitude | t.AltitudeOfRightTriangleBase()\t.AltitudeOfRightTriangleHeight()\t.AltitudeOfRightTriangleHypotenuse() | float64 |
+| Triangle | Input values | Working | Calculation | Result  
+| :--- | :--- | :--- | :--- | :--- | :---  
+| Right Triangle | base, height, hypotenuse | Perimeter | t.PerimeterOfRightTriangle() | float64  
+||| Area | t.AreaOfRightTriangle() | float64  
+||| Altitude | t.AltitudeOfRightTriangleBase()  t.AltitudeOfRightTriangleHeight()  t.AltitudeOfRightTriangleHypotenuse() | float64  
 |Isosceles Triangle|base,slants|Perimeter|t.PerimeterOfIsoscelesTriangle()|float64|
-|||Area|t.AreaOfIsoscelesTriangle()|float64|
-|||Altitude|t.AltitudeOfIsoscelesTriangle()|float64|
-|Equilateral Triangle|side|Perimeter|t.PerimeterOfEquilateralTriangle()|float64|
-|||Area|t.AreaOfEquilateralTriangle()|float64|
-|||Altitude|t.AltitudeOfEquilateralTriangle()|float64|
-|Scalene Triangle|side1, side2, side3|Perimeter\Area|t.PerimeterOfScaleneTriangle()\t.AreaOfScaleneTriangle()|float64|
+|||Area|t.AreaOfIsoscelesTriangle()|float64  
+|||Altitude|t.AltitudeOfIsoscelesTriangle()|float64  
+|Equilateral Triangle|side|Perimeter|t.PerimeterOfEquilateralTriangle()|float64  
+|||Area|t.AreaOfEquilateralTriangle()|float64  
+|||Altitude|t.AltitudeOfEquilateralTriangle()|float64  
+|Scalene Triangle|side1, side2, side3|Perimeter  Area|t.PerimeterOfScaleneTriangle()  t.AreaOfScaleneTriangle()|float64  
 
 # Quadrilaterals
 Gogeom supports the following types of quadrilaterals and their respective calculations
