@@ -1,7 +1,6 @@
 package gogeom
 
 import (
-	"fmt"
 	"math"
 )
 
