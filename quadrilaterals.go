@@ -7,67 +7,67 @@ import (
 
 //sides of square
 type SquareSides struct {
-	side float64
+	Side float64
 }
 
 //diagonals of square
 type SquareDiagonals struct {
-	diagonal float64
+	Diagonal float64
 }
 
 //sides of rectangle
 type RectangleSides struct {
-	length, breadth float64
+	Length, Breadth float64
 }
 
 //sides of parallelogram
 type ParallelogramSides struct {
-	base, slant, height float64
+	Base, Slant, Height float64
 }
 
 //sides of trapezium with height
 type TrapeziumSidesWithHeight struct {
-	base, top, height float64
+	Base, Top, Height float64
 }
 
 //sides of trapezium slants
 type TrapeziumSidesWithSlants struct {
-	base, top, slant1, slant2 float64
+	Base, Top, Slant1, Slant2 float64
 }
 
 //diagonals of rhombus
 type RhombusDiagonals struct {
-	diagonal1, diagonal2 float64
+	Diagonal1, Diagonal2 float64
 }
 
 //sides and height of rhombus
 type RhombusSides struct {
-	side, height float64
+	Side, Height float64
 }
 
 //sides of scalene quadrilateral
 type ScaleneQuadrilateralSides struct {
-	side1, side2, side3, side4 float64
+	Side1, Side2, Side3, Side4 float64
 }
 
 //perimeter of square when the sides are there
 func (q *SquareSides) PerimeterOfSquare() float64 {
-	return 4 * q.side
+	return 4 * q.Side
 }
 
 //area of the square when the sides are there
 func (q *SquareSides) AreaOfSquare() float64 {
-	return math.Pow(q.side,2)
+	return math.Pow(q.Side,2)
 }
 
 //diagonal of the square when the side is there
 func (q *SquareSides) DiagonalOfSquare() float64 {
-	return math.Sqrt(2) * q.side
+	return math.Sqrt(2) * q.Side
 }
 
 //side of the square when diagonal is there
 func (q *SquareDiagonals) SideOfSquare() float64 {
-	return q.diagonal / math.Sqrt(2)
+	return q.Diagonal / math.Sqrt(2)
 }
 
 //perimeter of the square when the diagonals are there
@@ -82,47 +82,47 @@ func (q *SquareDiagonals) AreaOfSquare() float64 {
 
 //perimeter of rectangle
 func (q *RectangleSides) PerimeterOfRectangle() float64 {
-	return 2 * (q.length + q.breadth)
+	return 2 * (q.Length + q.Breadth)
 }
 
 //area of rectangle
 func (q *RectangleSides) AreaOfRectangle() float64 {
-	return q.length * q.breadth
+	return q.Length * q.Breadth
 }
 
 //diagonal of rectangle
 func (q *RectangleSides) DiagonalOfRectangle() float64 {
-	return math.Sqrt(math.Pow(q.length, 2) + math.Pow(q.breadth, 2))
+	return math.Sqrt(math.Pow(q.Length, 2) + math.Pow(q.Breadth, 2))
 }
 
 //perimeter of parallelogram
 func (q *ParallelogramSides) PerimeterOfParallelogram() float64 {
-	return 2 * (q.base + q.slant)
+	return 2 * (q.Base + q.Slant)
 }
 
 //area of parallelogram
 func (q *ParallelogramSides) AreaOfParallelogram() float64 {
-	return q.base * q.height
+	return q.Base * q.Height
 }
 
 //area of trapezium
 func (q *TrapeziumSidesWithHeight) AreaOfTrapezium() float64 {
-	return 0.5 * (q.base + q.top) * q.height
+	return 0.5 * (q.Base + q.Top) * q.Height
 }
 
 //perimeter of trapezium
 func (q *TrapeziumSidesWithSlants) PerimeterOfTrapezium() float64 {
-	return q.base + q.top + q.slant1 + q.slant2
+	return q.Base + q.Top + q.Slant1 + q.Slant2
 }
 
 //area of rhombus with diagonals given
 func (q *RhombusDiagonals) AreaOfRhombus() float64 {
-	return 0.5 * q.diagonal1 * q.diagonal2
+	return 0.5 * q.Diagonal1 * q.Diagonal2
 }
 
 //length of each side of rhombus with diagonals given
 func (q *RhombusDiagonals) LengthOfRhombusSides() float64 {
-	return 0.5 * math.Sqrt(math.Pow(q.diagonal1, 2) + math.Pow(q.diagonal2, 2))
+	return 0.5 * math.Sqrt(math.Pow(q.Diagonal1, 2) + math.Pow(q.Diagonal2, 2))
 }
 
 //perimeter of rhombus with diagonals given
@@ -132,15 +132,15 @@ func (q *RhombusDiagonals) PerimeterOfRhombus() float64 {
 
 //area of rhombus with sides and height given
 func (q *RhombusSides) AreaOfRhombus() float64 {
-	return q.side * q.height
+	return q.Side * q.Height
 }
 
 //perimeter of rhombus with sides and height given
 func (q *RhombusSides) PerimeterOfRhombus() float64 {
-	return 4 * q.side
+	return 4 * q.Side
 }
 
 //perimeter of scalene quadrilateral
 func (q *ScaleneQuadrilateralSides) PerimeterOfScaleneQuadrilateral() float64 {
-	return q.side1 + q.side2 + q.side3 + q.side4
+	return q.Side1 + q.Side2 + q.Side3 + q.Side4
 }
