@@ -52,6 +52,21 @@ type RectangleSides struct {
 	length, breadth float64
 }
 
+//sides of parallelogram
+type ParallelogramSides struct {
+	base, slant, height float64
+}
+
+//sides of trapezium with height
+type TrapeziumSidesWithHeight struct {
+	base, top, height float64
+}
+
+//sides of trapezium slants
+type TrapeziumSidesWithSlants struct {
+	base, top, slant1, slant2 float64
+}
+
 //perimeter of square when the sides are there
 func (q *SquareSides) PerimeterOfSquareWithSide() float64 {
 	return 4 * q.side
@@ -97,11 +112,29 @@ func (q *RectangleSides) DiagonalOfRectangle() float64 {
 	return math.Sqrt(math.Pow(q.length, 2) + math.Pow(q.breadth, 2))
 }
 
+//perimeter of parallelogram
+func (q *ParallelogramSides) PerimeterOfParallelogram() float64 {
+	return 2 * (q.base + q.slant)
+}
+
+//area of parallelogram
+func (q *ParallelogramSides) AreaOfParallelogram() float64 {
+	return q.base * q.height
+}
+
+//area of trapezium
+func (q *TrapeziumSidesWithHeight) AreaOfTrapezium() float64 {
+	return 0.5 * (q.base + q.top) * q.height
+}
+
+//perimeter of trapezium
+func (q *TrapeziumSidesWithSlants) PerimeterOfTrapezium() float64 {
+	return q.base + q.top + q.slant1 + q.slant2
+}
+
 func main() {
-	input := RectangleSides {
-		3,4,
-	}
-	fmt.Println(input.PerimeterOfRectangle())
-	fmt.Println(input.AreaOfRectangle())
-	fmt.Println(input.DiagonalOfRectangle())
+	input := TrapeziumSidesWithSlants {
+		3,4,2,05,
+	}	
+	fmt.Println(input.PerimeterOfTrapezium())
 }
