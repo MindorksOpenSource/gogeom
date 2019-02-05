@@ -1,39 +1,7 @@
 //for quardrelaterals
-/*
-square->
-sides(a) | side(diagonal)
-perimeter, area, diagonal
-
-rectangle->
-sides(length,breadth) | side(length,diagonal) | side(breadth,diagonal)
-perimeter, area, diagonal
-
-parallelogram->
-sides(base,slant,height)
-perimeter, area
-
-trapezium->
-sides(base, upper, height) | sides(base, upper, slant1, slant2)
-area, perimeter
-
-rhombus->
-sides(diagonal1, diagonal2) | sides(base, height)
-area, each_side, perimeter
-
-kite->
-sides(diagonal1, diagonal2) | sides(smaller, larger)
-area, perimeter
-
-scaled->
-sides(side1, side2, side3 side4)
-perimeter
-*/
-
-//package gogeom
-package main
+package gogeom
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -75,6 +43,11 @@ type RhombusDiagonals struct {
 //sides and height of rhombus
 type RhombusSides struct {
 	side, height float64
+}
+
+//sides of scalene quadrilateral
+type ScaleneQuadrilateralSides struct {
+	side1, side2, side3, side4 float64
 }
 
 //perimeter of square when the sides are there
@@ -167,9 +140,7 @@ func (q *RhombusSides) PerimeterOfRhombus() float64 {
 	return 4 * q.side
 }
 
-func main() {
-	input := RhombusSides {
-		3,4,
-	}	
-	fmt.Println(input.PerimeterOfRhombus())
+//perimeter of scalene quadrilateral
+func (q *ScaleneQuadrilateralSides) PerimeterOfScaleneQuadrilateral() float64 {
+	return q.side1 + q.side2 + q.side3 + q.side4
 }
