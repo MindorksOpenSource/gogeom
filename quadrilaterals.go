@@ -67,13 +67,23 @@ type TrapeziumSidesWithSlants struct {
 	base, top, slant1, slant2 float64
 }
 
+//diagonals of rhombus
+type RhombusDiagonals struct {
+	diagonal1, diagonal2 float64
+}
+
+//sides and height of rhombus
+type RhombusSides struct {
+	side, height float64
+}
+
 //perimeter of square when the sides are there
-func (q *SquareSides) PerimeterOfSquareWithSide() float64 {
+func (q *SquareSides) PerimeterOfSquare() float64 {
 	return 4 * q.side
 }
 
 //area of the square when the sides are there
-func (q *SquareSides) AreaOfSquareWithSide() float64 {
+func (q *SquareSides) AreaOfSquare() float64 {
 	return math.Pow(q.side,2)
 }
 
@@ -88,12 +98,12 @@ func (q *SquareDiagonals) SideOfSquare() float64 {
 }
 
 //perimeter of the square when the diagonals are there
-func (q *SquareDiagonals) PerimeterOfSquareWithDiagonal() float64 {
+func (q *SquareDiagonals) PerimeterOfSquare() float64 {
 	return 4 * q.SideOfSquare()
 }
 
 //area of the square when the diagonals are there
-func (q *SquareDiagonals) AreaOfSquareWithDiagonal() float64 {
+func (q *SquareDiagonals) AreaOfSquare() float64 {
 	return math.Pow(q.SideOfSquare(), 2)
 }
 
@@ -132,9 +142,34 @@ func (q *TrapeziumSidesWithSlants) PerimeterOfTrapezium() float64 {
 	return q.base + q.top + q.slant1 + q.slant2
 }
 
+//area of rhombus with diagonals given
+func (q *RhombusDiagonals) AreaOfRhombus() float64 {
+	return 0.5 * q.diagonal1 * q.diagonal2
+}
+
+//length of each side of rhombus with diagonals given
+func (q *RhombusDiagonals) LengthOfRhombusSides() float64 {
+	return 0.5 * math.Sqrt(math.Pow(q.diagonal1, 2) + math.Pow(q.diagonal2, 2))
+}
+
+//perimeter of rhombus with diagonals given
+func (q *RhombusDiagonals) PerimeterOfRhombus() float64 {
+	return 4 * q.LengthOfRhombusSides()
+}
+
+//area of rhombus with sides and height given
+func (q *RhombusSides) AreaOfRhombus() float64 {
+	return q.side * q.height
+}
+
+//perimeter of rhombus with sides and height given
+func (q *RhombusSides) PerimeterOfRhombus() float64 {
+	return 4 * q.side
+}
+
 func main() {
-	input := TrapeziumSidesWithSlants {
-		3,4,2,05,
+	input := RhombusSides {
+		3,4,
 	}	
-	fmt.Println(input.PerimeterOfTrapezium())
+	fmt.Println(input.PerimeterOfRhombus())
 }
