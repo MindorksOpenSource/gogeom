@@ -55,6 +55,13 @@ func main() {
 	n_agon10 := geometry.CountAndLengthAndApothemOfAgonSide {
 		10,12,5.67, //for decagon
 	}
+	fmt.Println(ellipse.GetEccentricity())
+	fmt.Println(line.SlopeOfLine())
+	fmt.Println(line.XIntercept())
+	fmt.Println(line.YIntercept())
+	fmt.Println(circle.AreaOfCircles())
+	fmt.Println(parabola.AxisEquation())
+	fmt.Println(parabola.DirectrixEquation())
 	fmt.Println(iso_triangle.PerimeterOfIsoscelesTriangle())
 	fmt.Println(equi_triangle.AreaOfEquilateralTriangle())
 	fmt.Println(right_triangle.AltitudeOfRightTriangleBase())
@@ -67,11 +74,4 @@ func main() {
 	fmt.Println(scalene_quad.PerimeterOfScaleneQuadrilateral())
 	fmt.Println(n_agon5.PerimeterOfAgon())
 	fmt.Println(n_agon10.AreaOfAgon())												
-	fmt.Println(ellipse.GetEccentricity())
-	fmt.Println(line.SlopeOfLine())
-	fmt.Println(line.XIntercept())
-	fmt.Println(line.YIntercept())
-	fmt.Println(circle.AreaOfCircles())
-	fmt.Println(parabola.AxisEquation())
-	fmt.Println(parabola.DirectrixEquation())
 }

@@ -22,6 +22,9 @@ go get -u github.com/MindorksOpenSource/gogeom
 - [x]  **Line**
 - [x]  **Ellipse**
 - [x]  **Parabola**
+- [x]  **Triangle**
+- [x]  **Quadrilaterals**
+- [x]  **N-agons(polygons)**
 - [ ] more to come..
 
 # Circle
@@ -217,6 +220,43 @@ p :=shape.Parabola {
 |Polar Of Point - **x,y**||p.PolarOfPoint(x,y)|string|
 |Pole Of line - **lx + my + x = 0** ||p.PoleOfline(l,m)|float64, float64|
 
+# Triangle
+Gogeom supports the following types of triangle and their respective calculations
+- Right Angled Triangle
+- Isosceles Triangle
+- Equilateral Triangle
+- Scalene Triangle
+
+#### Step to follow :
+
+
+- import `shape "github.com/MindorksOpenSource/gogeom"`
+
+## Calculations for Triangles
+| Triangle | Input values | Working | Calculation | Result |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Right Triangle | base, height, hypotenuse | Perimeter | t.PerimeterOfRightTriangle() | float64 |
+||| Area | t.AreaOfRightTriangle() | float64 |
+||| Altitude | t.AltitudeOfRightTriangleBase()\t.AltitudeOfRightTriangleHeight()\t.AltitudeOfRightTriangleHypotenuse() | float64 |
+|Isosceles Triangle|base,slants|Perimeter|t.PerimeterOfIsoscelesTriangle()|float64|
+|||Area|t.AreaOfIsoscelesTriangle()|float64|
+|||Altitude|t.AltitudeOfIsoscelesTriangle()|float64|
+|Equilateral Triangle|side|Perimeter|t.PerimeterOfEquilateralTriangle()|float64|
+|||Area|t.AreaOfEquilateralTriangle()|float64|
+|||Altitude|t.AltitudeOfEquilateralTriangle()|float64|
+|Scalene Triangle|side1, side2, side3|Perimeter\Area|t.PerimeterOfScaleneTriangle()\t.AreaOfScaleneTriangle()|float64|
+
+# Quadrilaterals
+Gogeom supports the following types of quadrilaterals and their respective calculations
+- Square
+- Rectangle
+- Parallelogram
+- Trapezium/Trapezoid
+- Rhombus
+
+# N-Agon
+Gogeom can handle any polygon with given their *number of sides*, *length of sides* and *apothem of the shape*
+
 
 ### TODO
 * More features related to Geometrical Functions
@@ -228,6 +268,7 @@ p :=shape.Parabola {
 
 #### Contributor
 [Himanshu Singh](https://github.com/hi-manshu)
+[Nishchal Raj](https://github.com/nishchalraj)
 
 
 ### License
