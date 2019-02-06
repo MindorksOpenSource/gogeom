@@ -22,6 +22,9 @@ go get -u github.com/MindorksOpenSource/gogeom
 - [x]  **Line**
 - [x]  **Ellipse**
 - [x]  **Parabola**
+- [x]  **Triangle**
+- [x]  **Quadrilaterals**
+- [x]  **N-agons(polygons)**
 - [ ] more to come..
 
 # Circle
@@ -217,6 +220,162 @@ p :=shape.Parabola {
 |Polar Of Point - **x,y**||p.PolarOfPoint(x,y)|string|
 |Pole Of line - **lx + my + x = 0** ||p.PoleOfline(l,m)|float64, float64|
 
+# Triangle
+Gogeom supports the following types of triangle and their respective calculations
+- Right Angled Triangle
+- Isosceles Triangle
+- Equilateral Triangle
+- Scalene Triangle
+
+#### Step to follow :
+
+
+- import `shape "github.com/MindorksOpenSource/gogeom"`
+- Initialize triangles
+```
+//Right Triangle
+rt := shape.RightTriangleSides {
+	//base, height, hypotenuse
+	4, 3, 5,
+}
+
+//Isosceles Triangle
+it := shape.IsoscelesTriangleSides {
+	//base, slants
+	6,8,
+}
+
+//Equilateral Triangle
+et := shape.EquilateralTriangleSides {
+	//side
+	6,
+}
+
+//Scalene Triangle
+st := shape.ScaleneTriangleSides {
+	//side1, side2, side3
+	3,4,5,
+}
+```
+
+## Calculations for Triangles
+| Triangle | Input values | Working | Calculation | Result|
+| :--- | :--- | :--- | :--- | :--- |
+| Right Triangle | base, height, hypotenuse | Perimeter | rt.PerimeterOfRightTriangle() | float64|
+||| Area | rt.AreaOfRightTriangle() | float64|
+||| Altitude | rt.AltitudeOfRightTriangleBase()  rt.AltitudeOfRightTriangleHeight()  rt.AltitudeOfRightTriangleHypotenuse() | float64 |
+|Isosceles Triangle|base,slants|Perimeter|it.PerimeterOfIsoscelesTriangle()|float64|
+|||Area|it.AreaOfIsoscelesTriangle()|float64|
+|||Altitude|it.AltitudeOfIsoscelesTriangle()|float64|
+|Equilateral Triangle|side|Perimeter|et.PerimeterOfEquilateralTriangle()|float64|
+|||Area|et.AreaOfEquilateralTriangle()|float64 |
+|||Altitude|et.AltitudeOfEquilateralTriangle()|float64|
+|Scalene Triangle|side1, side2, side3|Perimeter  Area|st.PerimeterOfScaleneTriangle()  st.AreaOfScaleneTriangle()|float64|
+
+# Quadrilaterals
+Gogeom supports the following types of quadrilaterals and their respective calculations
+- Square
+- Rectangle
+- Parallelogram
+- Trapezium/Trapezoid
+- Rhombus
+- Scalene Quadrilaterals
+
+#### Step to follow :
+- import `shape "github.com/MindorksOpenSource/gogeom"`
+- Initialize quadrilaterals
+```
+//when Square sides are known
+sqs := shape.SquareSides {
+	//side
+	4,
+}
+
+//when Square diagonals are known
+sqd := shape.SquareDiagonals {
+	//diagonal
+	9,
+}
+
+//rectangle
+rct := shape.RectangleSides {
+	//length, breadth
+	6,10,
+}
+
+//parallelogram
+plg := shape.ParallelogramSides {
+	//base, slant, height
+	10,6,4.5,
+}
+
+//trapezium sides with height
+tph := shape.TrapeziumSidesWithHeight {
+	//base, top, height
+	10,5,4.6,
+}
+
+//trapezium sides with slants
+tps := shape.TrapeziumSidesWithSlants {
+	//base, top, slant1, slant2
+	10,5,5.2,5.7,
+}
+
+//rhombus with diagonals are known
+rmd := shape.RhombusDiagonals {
+	//diagonal1, diagonal2
+	10,8,
+}
+
+//rhombus with sides and height known
+rms := shape.RhombusSides {
+	//side, height
+	8,7,
+}
+
+//scalene quadrilateral
+scq := shape.ScaleneQuadrilateralSides {
+	//side1, side2, side3, side4
+	4,8,6,5,
+}
+```
+
+## Calculations for Quadrilaterals
+|Quadrilaterals|Input|Working|Calculation|Result|
+|:---|:---|:---|:---|:---|
+|Square|side|Perimeter<br/>Area<br/>Diagonal|sqs.PerimeterOfSquare()<br/>sqs.AreaOfSquare()<br/>sqs.DiagonalOfSquare()|float64|
+||diagonal|Perimeter<br/>Area<br/>Side|sqd.PerimeterOfSquare()<br/>sqd.AreaOfSquare()<br/>sqd.SideOfSquare()|float64|
+|Rectangle|length,breadth|Perimeter<br/>Area<br/>Diagonal|rct.PerimeterOfRectangle()<br/>rct.AreaOfRectangle()<br/>rct.DiagonalOfRectangle()|float64|
+|Parallelogram|base,slant,height|Perimeter<br/>Area|plg.PerimeterOfParallelogram()<br/>plg.AreaOfParallelogram()|float64|
+|Trapezium|base,top,height|Area|tph.AreaOfTrapezium()|float64|
+||base,top,slant1,slant2|Perimeter|tps.PerimeterOfTrapezium()|float64|
+|Rhombus|diagonal1,diagonal2|Area<br/>Side length<br/>Perimeter|rmd.AreaOfRhombus()<br/>rmd.LengthOfRhombusSides()<br/>rmd.PerimeterOfRhombus()|float64|
+||side,height|Perimeter<br/>Area|rms.PerimeterOfRhombus()<br/>rms.AreaOfRhombus|float64|
+|Scalene Quadrilaterals|side1,side2,side3,side4|Perimeter|scq.PerimeterOfScaleneQuadrilateral()|float64|
+
+# N-Agon
+Gogeom can handle any polygon with given their *number of sides*, *length of sides* and *apothem of the shape*.
+#### Step to follow :
+- import `shape "github.com/MindorksOpenSource/gogeom"`
+- Initialize n-agon
+```
+//if polygon
+n := shape.CountAndLengthAndApothemOfAgonSide {
+	//side_count, side_length, side_apothem
+	5,6,4.2,
+}
+
+//OR, if hexagon
+n := shape.CountAndLengthAndApothemOfAgonSide {
+	//side_count, side_length, side_apothem
+	6,6,4.6,
+}
+```
+
+## Calculations for n-agon (polygons)
+|Input|Working|Calculations|Result|
+|:---|:---|:---|:---|
+|side count,side length,apothem|Perimeter<br/>Area|n.PerimeterOfAgon()<br/>n.AreaOfAgon()|float64|
 
 ### TODO
 * More features related to Geometrical Functions
@@ -227,7 +386,8 @@ p :=shape.Parabola {
 
 
 #### Contributor
-[Himanshu Singh](https://github.com/hi-manshu)
+[Himanshu Singh](https://github.com/hi-manshu)\
+[Nishchal Raj](https://github.com/nishchalraj)
 
 
 ### License
