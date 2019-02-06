@@ -19,6 +19,7 @@ type EquilateralTriangleSides struct {
 	Side float64
 }
 
+//sides of the scalene triangle
 type ScaleneTriangleSides struct {
 	Side_a, Side_b, Side_c float64
 }
